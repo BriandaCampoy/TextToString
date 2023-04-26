@@ -1,0 +1,120 @@
+:root{
+  --background: rgb(35, 22, 42);
+  --font:rgb(111, 134, 178);
+  --purple:rgb(60, 43, 62);
+  --light-purple: rgb(95, 81, 130);
+  --glow: rgb(126, 110, 166);
+}
+
+body{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  background-color:var(--background);
+  color:var(--font)
+}
+
+textarea{
+  background-color: var(--purple);
+  resize:none;
+  border: solid 1.5px var(--light-purple);
+  outline: none;
+  color:var(--font);
+  width: 80vw;
+}
+
+textarea:focus{
+  border: solid 1.5px var(--font);
+}
+button{
+  background-color: var(--purple);
+  color: var(--font);
+  border: solid 1px var(--purple);
+  border-radius: 10px;
+  padding: 10px;
+}
+button:hover{
+  border: solid 1px var(--light-purple)
+}
+h1{
+  text-align:center;
+}
+code{
+  padding:10px;
+  width: 80vw;
+}
+footer{
+  background-color: var(--light-purple);
+  display: flex;
+  align-items: center;
+  padding:0 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+footer img{
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+}
+.content{
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.converter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:10px;
+}
+.codeResult{
+  display: flex;
+  margin:20px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--purple);
+  position: relative;
+  min-height: 100px;
+  border-radius: 10px;
+}
+.copied{
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  z-index: 2;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+}
+.copied-animated{
+  opacity: 1;
+}
+.icon__clipboard{
+  width:40px;
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.515));
+}
+
+.glowing__icon{
+  transition: .5s;
+}
+.glowing__icon::before {
+  background: var(--glow);
+  transition: .5s;
+  transform: scale(.9);
+  z-index: -1;
+}
+.glowing__icon:hover::before {
+  transform: scale(1.1);
+  -webkit-filter: drop-shadow(0 0 10px  var(--glow));
+  filter: drop-shadow(0 0 10px  var(--glow));
+}
+.glowing__icon:hover {
+  color: var(--glow);
+  -webkit-filter: drop-shadow(0 0 10px  var(--glow));
+  filter: drop-shadow(0 0 10px  var(--glow));
+}
